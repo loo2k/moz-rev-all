@@ -1,5 +1,6 @@
 var Through = require('through2');
 var Revisioner = require('./revisioner');
+var path = require('path');
 
 var RevAll = (function () {
 
