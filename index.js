@@ -4,7 +4,7 @@ var Revisioner = require('./revisioner');
 var RevAll = (function () {
 
     var RevAll = function (options) {
-        
+
         if (!(this instanceof RevAll)) {
             return new RevAll(options);
         }
@@ -35,6 +35,8 @@ var RevAll = (function () {
 
             var files = revisioner.files;
             for (var filename in files) {
+                var newfilepath = path.join(files[filename].base, files[filename].revPath);
+                files[filename].path = newfilepath;
                 this.push(files[filename]);
             }
             callback();
