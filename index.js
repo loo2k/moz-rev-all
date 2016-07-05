@@ -57,7 +57,8 @@ var RevAll = (function () {
 
         }, function (callback) {
 
-            this.push(revisioner.versionFile());
+            if (revisioner.files.length > 0)
+                this.push(revisioner.versionFile());
             callback();
 
         });
@@ -75,7 +76,8 @@ var RevAll = (function () {
 
         }, function (callback) {
 
-            this.push(revisioner.manifestFile());
+            if (revisioner.files.length > 0)
+                this.push(revisioner.manifestFile());
             callback();
 
         });
